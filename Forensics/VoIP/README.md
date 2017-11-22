@@ -1,20 +1,28 @@
 # VoIP [Forensics / 100pt]
 
-## Question
-
-```plain
-VoIP
+## Problem
 Extract a voice.
-The flag format is SECCON{[A-Z0-9]}.
-```
 
-[voip.pcap](https://github.com/AkashiSN/SECCON2016-Online-CTF/blob/master/Forensics/VoIP/voip.pcap)
+The flag format is SECCON{[A-Z0-9]}.
+
+[voip.pcap](voip.pcap)
 
 ## Answer
 
+Wiresharkで開くとIP電話のパケットのようなので、
 
-Ip電話のパケットのようなので、Wiresharkの`電話(y)→VoIP通話(V)→ストリーム再生`で音声を聞ける。
+`[電話(y)] > [RTP] > [RTPストリーム]`
 
-`V`の発音がわからず苦労した
+![img](img.png)
 
-FLAG:`SECCON{9001IVR}`
+2つともを選択した状態で`[分析]`をクリック
+
+![img](img2.png)
+
+`[保存(S)] > [同期された順方向の音声ストリーム]`
+
+から`Saved RTP Audio.au`として保存
+
+再生するとフラグを言ってくれるので聞き取る
+
+`SECCON{9001IVR}`

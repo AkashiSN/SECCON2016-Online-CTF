@@ -1,4 +1,0 @@
-ENCRYPT {
-  global: encrypt;
-  local: *;
-};

@@ -1,0 +1,24 @@
+{
+  "name": "seccon2016-online-ctf",
+  "version": "1.0.0",
+  "description": "![logo.png](logo.png)",
+  "main": "index.js",
+  "dependencies": {
+    "gitbook-plugin-collapsible-chapters": "^0.1.8",
+    "gitbook-plugin-katex": "^1.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AkashiSN/SECCON2016-Online-CTF.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AkashiSN/SECCON2016-Online-CTF/issues"
+  },
+  "homepage": "https://github.com/AkashiSN/SECCON2016-Online-CTF#readme"
+}

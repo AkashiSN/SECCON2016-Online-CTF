@@ -1,0 +1,45 @@
+# ignore file
+.bookignore
+.gitignore
+
+# Binary
+Binary/Anti-Debugging/*
+Binary/Obfuscated_AES/*
+Binary/Retrospective/*
+Binary/microcomputer/*
+Binary/ropsynth/*
+
+# Crypto
+Crypto/Alpha_Complex_1/*
+Crypto/Alpha_Complex_2/*
+Crypto/Backpackers_Capricious_Cipher/*
+Crypto/Lost_Decryption/*
+Crypto/PNG_over_Telegraph/*
+Crypto/Vigenere/*
+Crypto/biscuiti/*
+
+# Exploit
+Exploit/Missile/*
+Exploit/chat/*
+Exploit/checker/*
+Exploit/cheer_msg/*
+Exploit/jmper/*
+Exploit/logger/*
+Exploit/mboard/*
+Exploit/shopping/*
+Exploit/tinypad/*
+
+# Forensics
+Forensics/Memory_Analysis/*
+Forensics/VoIP/*
+Forensics/randomware/*
+
+# Web
+Web/basiq/*
+Web/pppppoxy/*
+Web/uncomfortable_web/*
+
+# allow
+!*.md
+!*.png
+!*.json

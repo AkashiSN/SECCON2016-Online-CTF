@@ -1,0 +1,843 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Memory Analysis · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../randomware/" />
+    
+    
+    <link rel="prev" href="../VoIP/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Crypto
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../Crypto/Vigenere/">
+            
+                <a href="../../Crypto/Vigenere/">
+            
+                    
+                    Vigenere
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../Crypto/biscuiti/">
+            
+                <a href="../../Crypto/biscuiti/">
+            
+                    
+                    biscuiti
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../Crypto/Alpha_Complex_1/">
+            
+                <a href="../../Crypto/Alpha_Complex_1/">
+            
+                    
+                    Alpha Complex 1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../Crypto/PNG_over_Telegraph/">
+            
+                <a href="../../Crypto/PNG_over_Telegraph/">
+            
+                    
+                    PNG over Telegraph
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../Crypto/Backpackers_Capricious_Cipher/">
+            
+                <a href="../../Crypto/Backpackers_Capricious_Cipher/">
+            
+                    
+                    Backpacker's Capricious Cipher
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../Crypto/Lost_Decryption/">
+            
+                <a href="../../Crypto/Lost_Decryption/">
+            
+                    
+                    Lost Decryption
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../Crypto/Alpha_Complex_2/">
+            
+                <a href="../../Crypto/Alpha_Complex_2/">
+            
+                    
+                    Alpha Complex 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Forensics
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../VoIP/">
+            
+                <a href="../VoIP/">
+            
+                    
+                    VoIP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Memory Analysis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../randomware/">
+            
+                <a href="../randomware/">
+            
+                    
+                    randomware
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Binary
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../Binary/Anti-Debugging/">
+            
+                <a href="../../Binary/Anti-Debugging/">
+            
+                    
+                    Anti-Debugging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../Binary/ropsynth/">
+            
+                <a href="../../Binary/ropsynth/">
+            
+                    
+                    ropsynth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../Binary/microcomputer/">
+            
+                <a href="../../Binary/microcomputer/">
+            
+                    
+                    microcomputer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../Binary/Retrospective/">
+            
+                <a href="../../Binary/Retrospective/">
+            
+                    
+                    Retrospective
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../Binary/Obfuscated_AES/">
+            
+                <a href="../../Binary/Obfuscated_AES/">
+            
+                    
+                    Obfuscated AES
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Exploit
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../Exploit/chat/">
+            
+                <a href="../../Exploit/chat/">
+            
+                    
+                    chat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../Exploit/cheer_msg/">
+            
+                <a href="../../Exploit/cheer_msg/">
+            
+                    
+                    cheer_msg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../Exploit/jmper/">
+            
+                <a href="../../Exploit/jmper/">
+            
+                    
+                    jmper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../Exploit/mboard/">
+            
+                <a href="../../Exploit/mboard/">
+            
+                    
+                    mboard
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../Exploit/tinypad/">
+            
+                <a href="../../Exploit/tinypad/">
+            
+                    
+                    tinypad
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../Exploit/logger/">
+            
+                <a href="../../Exploit/logger/">
+            
+                    
+                    logger
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../../Exploit/checker/">
+            
+                <a href="../../Exploit/checker/">
+            
+                    
+                    checker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../../Exploit/Missile/">
+            
+                <a href="../../Exploit/Missile/">
+            
+                    
+                    Missile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../../Exploit/shopping/">
+            
+                <a href="../../Exploit/shopping/">
+            
+                    
+                    shopping
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Web
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../Web/basiq/">
+            
+                <a href="../../Web/basiq/">
+            
+                    
+                    basiq
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../Web/pppppoxy/">
+            
+                <a href="../../Web/pppppoxy/">
+            
+                    
+                    pppppoxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../Web/uncomfortable_web/">
+            
+                <a href="../../Web/uncomfortable_web/">
+            
+                    
+                    uncomfortable web
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Memory Analysis</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="memory-analysis-forensics--100pt">Memory Analysis [Forensics / 100pt]</h1>
+<h2 id="question">Question</h2>
+<pre><code class="lang-plain">Find the website that the fake svchost is accessing.
+You can get the flag if you access the website!!
+
+The challenge files are huge, please download it first. 
+Hint1: http://www.volatilityfoundation.org/
+Hint2: Check the hosts file
+</code></pre>
+<p><del>password: fjliejflsjiejlsiejee33cnc</del></p>
+<blockquote>
+<p>GitHub&#x306B;&#x4E0A;&#x3052;&#x308B;&#x90FD;&#x5408;&#x4E0A;<code>tar.xz</code>&#x5727;&#x7E2E;&#x3057;&#x3066;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x306F;&#x304B;&#x304B;&#x3063;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;</p>
+</blockquote>
+<p><a href="https://github.com/AkashiSN/SECCON2016-Online-CTF/blob/master/Forensics/Memory_Analysis/memoryanalysis.tar.xz" target="_blank">memoryanalysis.tar.xz</a></p>
+<h2 id="answer">Answer</h2>
+<p>Hint1&#x306B;&#x3042;&#x308B;&#x3088;&#x3046;&#x306B;&#x30E1;&#x30E2;&#x30EA;&#x30C0;&#x30F3;&#x30D7;&#x306E;&#x89E3;&#x6790;&#x30BD;&#x30D5;&#x30C8;<a href="http://www.volatilityfoundation.org/" target="_blank">Volatility</a>&#x3092;&#x4F7F;&#x3063;&#x3066;&#x307F;&#x308B;</p>
+<p><code>Volatility 2.6 Linux Standalone Executables (x64)</code>&#x3092;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;&#x3057;&#x3066;&#x30D1;&#x30B9;&#x3092;&#x901A;&#x3057;&#x3066;&#x3042;&#x3052;&#x308B;</p>
+<p><a href="https://github.com/volatilityfoundation/volatility/wiki/Volatility-Usage" target="_blank">Volatility&#x306E;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;</a></p>
+<p>&#x307E;&#x305A;&#x3053;&#x306E;&#x30C0;&#x30F3;&#x30D7;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x60C5;&#x5831;&#x3092;&#x53D6;&#x5F97;&#x3057;&#x3066;&#x307F;&#x308B;</p>
+<pre><code class="lang-plain">$ volatility -f forensic_100.raw imageinfo
+
+Volatility Foundation Volatility Framework 2.6
+INFO    : volatility.debug    : Determining profile based on KDBG search...
+          Suggested Profile(s) : WinXPSP2x86, WinXPSP3x86 (Instantiated with WinXPSP2x86)
+                     AS Layer1 : IA32PagedMemoryPae (Kernel AS)
+                     AS Layer2 : FileAddressSpace (/home/user/CTFs/SECCON2016-Online-CTF/q3/forensic_100.raw)
+                      PAE type : PAE
+                           DTB : 0x34c000L
+                          KDBG : 0x80545ce0L
+          Number of Processors : 1
+     Image Type (Service Pack) : 3
+                KPCR for CPU 0 : 0xffdff000L
+             KUSER_SHARED_DATA : 0xffdf0000L
+           Image date and time : 2016-12-06 05:28:47 UTC+0000
+     Image local date and time : 2016-12-06 14:28:47 +0900
+</code></pre>
+<p>&#x3053;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306F;<code>WinXP</code>&#x306E;&#x30E1;&#x30E2;&#x30EA;&#x30C0;&#x30F3;&#x30D7;&#x306E;&#x3088;&#x3046;</p>
+<p>&#x30CB;&#x30BB;&#x306E;<code>svchost</code>&#x306E;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3092;&#x898B;&#x3064;&#x3051;&#x308B;</p>
+<pre><code class="lang-plain">$ volatility -f forensic_100.raw psscan | grep svchost
+Volatility Foundation Volatility Framework 2.6
+0x0000000002018da0 svchost.exe         848    672 0x091c00e0 2016-12-06 05:27:08 UTC+0000                                 
+0x0000000002041928 svchost.exe        1320    672 0x091c0180 2016-12-06 05:27:10 UTC+0000                                 
+0x000000000204f560 svchost.exe        1704    672 0x091c0200 2016-12-06 05:27:10 UTC+0000                                 
+0x0000000002165da0 svchost.exe        1776    672 0x091c0220 2016-12-06 05:27:10 UTC+0000                                 
+0x0000000002192778 svchost.exe        1088    672 0x091c0140 2016-12-06 05:27:08 UTC+0000                                 
+0x0000000002351ca8 svchost.exe         936    672 0x091c0100 2016-12-06 05:27:08 UTC+0000                                 
+0x0000000002512450 svchost.exe        1036    672 0x091c0120 2016-12-06 05:27:08 UTC+0000
+</code></pre>
+<p>&#x6B21;&#x306B;&#x3059;&#x3079;&#x3066;&#x306E;<code>svchost</code>&#x3092;&#x30C0;&#x30F3;&#x30D7;&#x3059;&#x308B;</p>
+<pre><code class="lang-plain">$ mkdir dump
+$ volatility -f forensic_100.raw procdump -D dump/ -p 848
+Volatility Foundation Volatility Framework 2.6
+Process(V) ImageBase  Name                 Result
+---------- ---------- -------------------- ------
+0x81e18da0 0x01000000 svchost.exe          OK: executable.848.exe
+$ volatility -f forensic_100.raw procdump -D dump/ -p 1320
+Volatility Foundation Volatility Framework 2.6
+Process(V) ImageBase  Name                 Result
+---------- ---------- -------------------- ------
+0x81e41928 0x01000000 svchost.exe          OK: executable.1320.exe
+$ volatility -f forensic_100.raw procdump -D dump/ -p 1704
+Volatility Foundation Volatility Framework 2.6
+Process(V) ImageBase  Name                 Result
+---------- ---------- -------------------- ------
+0x81e4f560 0x01000000 svchost.exe          OK: executable.1704.exe
+$ volatility -f forensic_100.raw procdump -D dump/ -p 1776
+Volatility Foundation Volatility Framework 2.6
+Process(V) ImageBase  Name                 Result
+---------- ---------- -------------------- ------
+0x81f65da0 0x00400000 svchost.exe          OK: executable.1776.exe
+$ volatility -f forensic_100.raw procdump -D dump/ -p 1088
+Volatility Foundation Volatility Framework 2.6
+Process(V) ImageBase  Name                 Result
+---------- ---------- -------------------- ------
+0x81f92778 0x01000000 svchost.exe          OK: executable.1088.exe
+$ volatility -f forensic_100.raw procdump -D dump/ -p 936 
+Volatility Foundation Volatility Framework 2.6
+Process(V) ImageBase  Name                 Result
+---------- ---------- -------------------- ------
+0x82151ca8 0x01000000 svchost.exe          OK: executable.936.exe
+$ volatility -f forensic_100.raw procdump -D dump/ -p 1036
+Volatility Foundation Volatility Framework 2.6
+Process(V) ImageBase  Name                 Result
+---------- ---------- -------------------- ------
+0x82312450 0x01000000 svchost.exe          OK: executable.1036.exe
+</code></pre>
+<p>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30BF;&#x30A4;&#x30D7;&#x3092;&#x8ABF;&#x3079;&#x308B;</p>
+<pre><code class="lang-plain">$ file dump/*
+dump/executable.848.exe:  PE32 executable (GUI) Intel 80386, for MS Windows
+dump/executable.936.exe:  PE32 executable (GUI) Intel 80386, for MS Windows
+dump/executable.1036.exe: PE32 executable (GUI) Intel 80386, for MS Windows
+dump/executable.1088.exe: PE32 executable (GUI) Intel 80386, for MS Windows
+dump/executable.1320.exe: PE32 executable (GUI) Intel 80386, for MS Windows
+dump/executable.1704.exe: PE32 executable (GUI) Intel 80386, for MS Windows
+dump/executable.1776.exe: PE32 executable (console) Intel 80386, for MS Windows
+</code></pre>
+<p><code>dump/executable.1776.exe</code>&#x3060;&#x3051;&#x304C;<code>console</code>&#x306E;&#x3088;&#x3046;&#x306A;&#x306E;&#x3067;&#x602A;&#x3057;&#x3044;</p>
+<blockquote>
+<p>Find the website that the fake svchost is accessing.</p>
+</blockquote>
+<p>&#x3068;&#x306E;&#x3053;&#x3068;&#x306A;&#x306E;&#x3067;</p>
+<p><code>strings</code>&#x3057;&#x3066;<code>http</code>&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x304C;&#x3042;&#x308B;&#x304B;&#x3092;&#x898B;&#x3066;&#x307F;&#x308B;</p>
+<pre><code class="lang-plain">$ strings dump/executable.1776.exe | grep http
+C:\Program Files\Internet Explorer\iexplore.exe http://crattack.tistory.com/entry/Data-Science-import-pandas-as-pd
+</code></pre>
+<p>&#x3042;&#x3063;&#x305F;&#xFF01;&#xFF01;&#xFF01;</p>
+<blockquote>
+<p>Hint2: Check the hosts file</p>
+</blockquote>
+<p>&#x306A;&#x306E;&#x3067;&#x8ABF;&#x3079;&#x3066;&#x307F;&#x308B;</p>
+<pre><code class="lang-plain">$ volatility -f forensic_100.raw filescan | grep hosts 
+Volatility Foundation Volatility Framework 2.6
+0x000000000217b748      1      0 R--rw- \Device\HarddiskVolume1\WINDOWS\system32\drivers\etc\hosts
+</code></pre>
+<p>&#x3042;&#x3063;&#x305F;&#xFF01;&#xFF01;&#xFF01;</p>
+<p>&#x30C0;&#x30F3;&#x30D7;&#x3057;&#x3066;&#x307F;&#x3088;&#x3046;&#xFF01;</p>
+<pre><code class="lang-plain">$ mkdir output
+$ volatility -f forensic_100.raw dumpfiles -D output/ -Q 0x000000000217b748
+Volatility Foundation Volatility Framework 2.6
+DataSectionObject 0x0217b748   None   \Device\HarddiskVolume1\WINDOWS\system32\drivers\etc\hosts
+</code></pre>
+<p>&#x8868;&#x793A;&#x3057;&#x3066;&#x307F;&#x3088;&#x3046;&#xFF01;</p>
+<pre><code class="lang-plain">$ file output/file.None.0x819a3008.dat 
+output/file.None.0x819a3008.dat: ASCII text, with CRLF line terminators
+$ cat output/file.None.0x819a3008.dat 
+# Copyright (c) 1993-1999 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a &apos;#&apos; symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+
+127.0.0.1       localhost
+153.127.200.178    crattack.tistory.com
+</code></pre>
+<p><code>crattack.tistory.com</code>&#x3078;&#x306E;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x306F;&#x5F37;&#x5236;&#x7684;&#x306B;<code>153.127.200.178</code>&#x306B;&#x5909;&#x66F4;&#x3055;&#x308C;&#x3066;&#x3057;&#x307E;&#x3063;&#x3066;&#x3044;&#x308B;&#x30FB;&#x30FB;&#x30FB;</p>
+<p>&#x3063;&#x3066;&#x3053;&#x3068;&#x306F;&#x3055;&#x3063;&#x304D;<code>svchost</code>&#x304C;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x3044;&#x305F;</p>
+<p><code>http://crattack.tistory.com/entry/Data-Science-import-pandas-as-pd</code>&#x306F;</p>
+<p><code>http://153.127.200.178/entry/Data-Science-import-pandas-as-pd</code>&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x3044;&#x305F;&#x3053;&#x3068;&#x306B;&#x306A;&#x308B;&#x306E;&#x3067;</p>
+<blockquote>
+<p>You can get the flag if you access the website!!</p>
+</blockquote>
+<p>&#x306A;&#x306E;&#x3067;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x307F;&#x308B;&#xFF08;&#x4ECA;&#x306F;&#x5225;&#x306E;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x304C;&#x7ACB;&#x3061;&#x4E0A;&#x304C;&#x3063;&#x3066;&#x308B;&#xFF09;</p>
+<p>&#x3059;&#x308B;&#x3068;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;&#x3055;&#x308C;&#x308B;&#x306E;&#x3067;&#x8868;&#x793A;&#x3059;&#x308B;&#x3068;&#x30D5;&#x30E9;&#x30B0;&#x304C;&#x624B;&#x306B;&#x5165;&#x308B;</p>
+<p><code>SECCON{_h3110_w3_h4ve_fun_w4rg4m3_}</code></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../VoIP/" class="navigation navigation-prev " aria-label="Previous page: VoIP">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../randomware/" class="navigation navigation-next " aria-label="Next page: randomware">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Memory Analysis","level":"1.3.2","depth":2,"next":{"title":"randomware","level":"1.3.3","depth":2,"path":"Forensics/randomware/README.md","ref":"Forensics/randomware/README.md","articles":[]},"previous":{"title":"VoIP","level":"1.3.1","depth":2,"path":"Forensics/VoIP/README.md","ref":"Forensics/VoIP/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex","collapsible-chapters"],"pluginsConfig":{"katex":{},"collapsible-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Forensics/Memory_Analysis/README.md","mtime":"2017-11-16T14:09:41.460Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-28T09:13:09.082Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
